@@ -21,6 +21,7 @@ import LoginPage from '../LoginPage/LoginPage';
 import RegisterPage from '../RegisterPage/RegisterPage';
 
 import './App.css';
+import League from '../../League/League';
 
 function App() {
   const dispatch = useDispatch();
@@ -66,6 +67,14 @@ function App() {
             path="/info"
           >
             <InfoPage />
+          </ProtectedRoute>
+
+          <ProtectedRoute 
+          
+          exact
+          path="/league"
+          >
+            <League />
           </ProtectedRoute>
 
           <Route
