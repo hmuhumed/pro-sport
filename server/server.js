@@ -11,6 +11,9 @@ const passport = require('./strategies/user.strategy');
 const userRouter = require('./routes/user.router');
 const teamRouter = require('./routes/team.router');
 const leagueRouter = require('./routes/league.router');
+const fixtureRouter = require('./routes/fixtures.router');
+const squadRouter = require('./routes/squad.router');
+const playerRouter = require('./routes/player.routes')
 
 // Body parser middleware
 app.use(bodyParser.json());
@@ -27,6 +30,9 @@ app.use(passport.session());
 app.use('/api/user', userRouter);
 app.use('/api/team', teamRouter);
 app.use('/api/standings', leagueRouter);
+app.use('/api/fixtures', fixtureRouter);
+app.use('/api/players/squads' , squadRouter);
+app.use('/api/players' , playerRouter)
 
 
 // Serve static files

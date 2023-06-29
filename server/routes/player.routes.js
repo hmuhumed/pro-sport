@@ -3,15 +3,15 @@ const pool = require('../modules/pool');
 const router = express.Router();
 const {callApi} = require('../modules/api.cache');
 
-router.get('/', (req, res) => {
-    console.log('GET /league');
+router.get('/:id' , (req , res) => {
+    console.log('GET /player');
 
     const options = {
         method: 'GET',
-        url: 'https://api-football-v1.p.rapidapi.com/v3/standings',
+        url: 'https://api-football-v1.p.rapidapi.com/v3/players',
         params: {
-            season: '2022',
-            league: '39'
+            id: req.params.id,
+            season: '2022'
         },
         headers: {
             'X-RapidAPI-Key': `${process.env.RAPID_API_KEY}`,
@@ -19,11 +19,10 @@ router.get('/', (req, res) => {
         }
     };
     callApi(options).then(results => {
-        res.send(results)
-        // res.sendStatus(200);
+        res.send(results);
     }).catch(err => {
-        console.log('Error in GET /leagues' , err)
-        res.sendStatus(500);
+        console.log('Error in GET /player' , err);
+        res.sendStatus(500)
     })
 })
 

@@ -22,6 +22,8 @@ import RegisterPage from '../RegisterPage/RegisterPage';
 
 import './App.css';
 import League from '../../League/League';
+import Squad from '../Squad/Squad';
+import Player from '../Player/Player';
 
 function App() {
   const dispatch = useDispatch();
@@ -75,6 +77,20 @@ function App() {
           path="/league"
           >
             <League />
+          </ProtectedRoute>
+
+          <ProtectedRoute
+          exact 
+          path="/squads/:id"
+          >
+            <Squad />
+          </ProtectedRoute>
+
+          <ProtectedRoute 
+          exact
+          path="/player/:id"
+          >
+            <Player />
           </ProtectedRoute>
 
           <Route

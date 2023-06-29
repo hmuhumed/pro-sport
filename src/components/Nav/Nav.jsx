@@ -32,6 +32,10 @@ function Nav() {
               League
             </Link>
 
+            <Link className="navLink" to="/squads">
+              Squad
+            </Link>
+
             <Link className="navLink" to="/info">
               Info Page
             </Link>
