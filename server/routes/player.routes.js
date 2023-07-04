@@ -26,4 +26,18 @@ router.get('/:id' , (req , res) => {
     })
 })
 
+router.post('/:id', (req , res) => {
+    console.log("REQ PARAMS ID",req.params.id);
+    const queryText = `INSERT INTO "bookmarks" ("player_id" , "comments" , "user_id") VALUES ($1 , $2, $3)`
+    console.log('Req.body.comments' , req.body.comment);
+    pool.query(queryText , [req.params.id , req.body.comment, req.user.id])
+    .then(result => {
+        res.send(result.rows)
+        // res.sendStatus(201)
+    }).catch(err => {
+        console.log('Error in POST /player.router' , err)
+        res.sendStatus(500);
+    })
+})
+
 module.exports = router;

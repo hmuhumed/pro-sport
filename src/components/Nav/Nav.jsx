@@ -32,8 +32,12 @@ function Nav() {
               League
             </Link>
 
-            <Link className="navLink" to="/squads">
+            <Link className="navLink" to="/squads/:id">
               Squad
+            </Link>
+
+            <Link className="navLink" to="/bookmarks/:id">
+              Bookmark
             </Link>
 
             <Link className="navLink" to="/info">

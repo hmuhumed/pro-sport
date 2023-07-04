@@ -3,13 +3,13 @@ const pool = require('../modules/pool');
 const router = express.Router();
 const {callApi} = require('../modules/api.cache');
 
-router.get('/:id', (req, res) => {
+router.get('/:id/:page', (req, res) => {
     console.log('GET /sqaud');
 
     const options = {
         method: 'GET',
         url: 'https://api-football-v1.p.rapidapi.com/v3/players',
-        params: {team: req.params.id , season: '2023'},
+        params: {team: req.params.id , season: '2023' , page: req.params.page},
         headers: {
             'X-RapidAPI-Key': `${process.env.RAPID_API_KEY}`,
             'X-RapidAPI-Host': 'api-football-v1.p.rapidapi.com'

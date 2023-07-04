@@ -24,6 +24,7 @@ import './App.css';
 import League from '../../League/League';
 import Squad from '../Squad/Squad';
 import Player from '../Player/Player';
+import Bookmarks from '../Bookmarks/Bookmarks';
 
 function App() {
   const dispatch = useDispatch();
@@ -91,6 +92,13 @@ function App() {
           path="/player/:id"
           >
             <Player />
+          </ProtectedRoute>
+
+          <ProtectedRoute
+          exact 
+          path="/bookmarks/:id"
+          >
+            <Bookmarks />
           </ProtectedRoute>
 
           <Route

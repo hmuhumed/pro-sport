@@ -14,6 +14,7 @@ const leagueRouter = require('./routes/league.router');
 const fixtureRouter = require('./routes/fixtures.router');
 const squadRouter = require('./routes/squad.router');
 const playerRouter = require('./routes/player.routes')
+const bookmarkRouter = require('./routes/bookmarks.router')
 
 // Body parser middleware
 app.use(bodyParser.json());
@@ -33,6 +34,7 @@ app.use('/api/standings', leagueRouter);
 app.use('/api/fixtures', fixtureRouter);
 app.use('/api/players/squads' , squadRouter);
 app.use('/api/players' , playerRouter)
+app.use('/api/bookmarks' , bookmarkRouter)
 
 
 // Serve static files
@@ -45,3 +47,5 @@ const PORT = process.env.PORT || 5004;
 app.listen(PORT, () => {
   console.log(`Listening on port: ${PORT}`);
 });
+
+

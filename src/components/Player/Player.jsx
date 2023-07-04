@@ -2,6 +2,8 @@ import React from "react";
 import { useHistory, useParams } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { useEffect } from "react";
+import axios from 'axios';
+import { useState } from "react";
 import './Player.css'
 
 function Player(){
@@ -10,6 +12,7 @@ function Player(){
     const dispatch = useDispatch();
     const history = useHistory();
     const params = useParams();
+    // const [comment , setComment] = useState('');
 
     useEffect(() => {
         dispatch({
@@ -18,6 +21,11 @@ function Player(){
         })
         
     }, [params.id]);
+
+    const handleBookmark = () => {
+
+    }
+   
 
     // const id = players.statistics.find((team) => team.team.id)
     // const squad = useSelector((store) => store.squadReducer.find((squad) => squad.id == params.id))
@@ -39,7 +47,7 @@ function Player(){
                 <p>Weight: {athlete.player.weight}</p>
                 </div>
             ))}
-            <h1>Stats</h1>
+            <h1 className="stats-header" >Stats</h1>
             {players.map((athlete, i) => (
                 <>
                 <div className="player-stats">

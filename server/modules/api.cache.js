@@ -1,6 +1,6 @@
 const pool = require('./pool');
 const axios = require('axios');
-const dailyLimit = 50;
+const dailyLimit = 70;
 
 const callApi = async (options) => {
     try {
