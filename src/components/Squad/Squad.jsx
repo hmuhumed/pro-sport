@@ -29,7 +29,7 @@ function Squad() {
 
   return (
     <>
-        {/* <h2>{squad[0].statistics[0].team.name}</h2> */}
+      <h2>{squad[0]?.statistics[0]?.team.name}</h2>
       <table>
         <thead>
           <tr>
@@ -78,6 +78,8 @@ function Squad() {
           ))}
         </tbody>
       </table>
+      <br />
+      <button onClick={() => history.push('/league')}>Back</button>
     </>
   );
 }

@@ -32,3 +32,15 @@
     text-align: center;
     justify-content: center;
 }
+
+.recent-fixtures {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+
+  .fixtures {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+  }

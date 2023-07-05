@@ -87,7 +87,7 @@ function League() {
       <br></br>
       <h2 className="recent-fixtures">Recent Fixtures</h2>
       {fixtures?.map((game, i) => (
-        <p key={i} className="fixtures">{game.teams.home.name} {game.score.fulltime.home} - {game.score.fulltime.away} {game.teams.away.name}</p>
+        <p key={i} className="fixtures"> <img src={game.teams.home.logo} className="image" />  {game.teams.home.name} {game.score.fulltime.home} - {game.score.fulltime.away} <img src={game.teams.away.logo} className="image" /> {game.teams.away.name}</p>
       ))}
       
 

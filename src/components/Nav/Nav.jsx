@@ -32,11 +32,11 @@ function Nav() {
               League
             </Link>
 
-            <Link className="navLink" to="/squads/:id">
+            {/* <Link className="navLink" to="/squads/:id">
               Squad
-            </Link>
+            </Link> */}
 
-            <Link className="navLink" to="/bookmarks/:id">
+            <Link className="navLink" to="/bookmarks">
               Bookmark
             </Link>
 

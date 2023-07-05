@@ -10,12 +10,18 @@ function PlayerItem({player}){
 
     const handleBookmark = () => {
         dispatch({type:'POST_BOOKMARK', payload: {player: player.player.id , comment: comment}})
-        dispatch({type: 'SET_BOOKMARK' , payload: {comment: comment , player: player.player.id}})
+        // dispatch({type: 'SET_BOOKMARK' , payload: {comment: comment , player: player.player.id}})
+        dispatch({type: "FETCH_BOOKMARK"})
         setComment('');
+        history.push(`/bookmarks`)
     }
 
+    // const historyBookmark = () => {
+    //   <Link to={`/bookmarks/${player.player.id}`} ></Link>
+    // }
+
     return (
-        
+        <>
             <tr>
               <td onClick={() => history.push(`/player/${player.player.id}`)}>
                 {player.player.firstname} {player.player.lastname}
@@ -27,7 +33,7 @@ function PlayerItem({player}){
               </td>
               <td> <input type="text" value={comment} placeholder="Comment about player.." onChange={(e) => setComment(e.target.value)}/> </td>
               <td>
-                <Link to={`/bookmarks/${player.player.id}`} >
+                
                 <button onClick={() => handleBookmark()}>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -45,10 +51,11 @@ function PlayerItem({player}){
                   </svg>
                   Add Bookmark
                 </button>
-              </Link>
+              
               </td>
             </tr>
-        
+            
+        </>
     )
 }
 

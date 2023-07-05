@@ -7,6 +7,8 @@ import fixtureSaga from './fixtures.saga';
 import squadSaga from './squad.saga';
 import playerSaga from './player.saga';
 import bookmarkSaga from './bookmark.saga';
+import deleteSaga from './delete.saga';
+import updateSaga from './update.saga';
 
 // rootSaga is the primary saga.
 // It bundles up all of the other sagas so our project can use them.
@@ -24,6 +26,8 @@ export default function* rootSaga() {
     fixtureSaga(),
     squadSaga(),
     playerSaga(),
-    bookmarkSaga()
+    bookmarkSaga(),
+    deleteSaga(),
+    updateSaga()
   ]);
 }

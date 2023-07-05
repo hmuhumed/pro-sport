@@ -25,6 +25,8 @@ function LoginForm() {
   }; // end login
 
   return (
+    <div className='main'>
+     
     <form className="formPanel" onSubmit={login}>
       <h2>Login</h2>
       {errors.loginMessage && (
@@ -32,7 +34,7 @@ function LoginForm() {
           {errors.loginMessage}
         </h3>
       )}
-      <div>
+      <div className="input-container">
         <label htmlFor="username">
           Username:
           <input
@@ -44,7 +46,7 @@ function LoginForm() {
           />
         </label>
       </div>
-      <div>
+      <div className='input-container'>
         <label htmlFor="password">
           Password:
           <input
@@ -60,6 +62,7 @@ function LoginForm() {
         <input className="btn" type="submit" name="submit" value="Log In" />
       </div>
     </form>
+    </div>
   );
 }
 

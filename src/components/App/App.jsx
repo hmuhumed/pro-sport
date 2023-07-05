@@ -96,7 +96,7 @@ function App() {
 
           <ProtectedRoute
           exact 
-          path="/bookmarks/:id"
+          path="/bookmarks"
           >
             <Bookmarks />
           </ProtectedRoute>

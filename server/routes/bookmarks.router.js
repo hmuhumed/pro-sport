@@ -7,7 +7,7 @@ router.get('/' , (req, res) => {
 
     const queryText = `SELECT * FROM "bookmarks" WHERE "user_id" = $1`
     pool.query(queryText, [req.user.id]).then(result => {
-        console.log('GET result from database' , result)
+        // console.log('GET result from database' , result)
         // res.send(result)
         const apiPromise = []
         for (const row of result.rows){
@@ -30,21 +30,7 @@ router.get('/' , (req, res) => {
     Promise.all(apiPromise)
     .then(apiResult => {
         
-        // console.log('This is apiResult:' , apiResult)
-        // const finalResult = apiResult?.map(item => item.response[0])
-        
-        // console.log('This is finalResult:', finalResult)
-        // const player = finalResult?.map(item => item.player);
-
-        // const statistics = apiResult.response?.map(item => item.statistics)
-        // console.log('This is player data:', player)
-        // console.log('This is statistics:', statistics)
-        // const playerResult = apiResult[0].response[0].player
-        // const playerStats = apiResult[0].response[0].statistics[0]
-        
-        // const playerClub = playerStats.team.name
-        // const playerGoals = playerStats.goals.total
-        // const playerAssists = playerStats.goals.assists
+      
 
         const bookmarkResponse = result.rows.map(bookmark => {
             const foundPlayer = apiResult.find(player => bookmark.player_id === player?.response[0]?.player?.id)
@@ -53,7 +39,7 @@ router.get('/' , (req, res) => {
 
         
         res.send(bookmarkResponse)
-        console.log('Combined results:', combinedResults)
+        
     }).catch(error => {
         console.log('Error in PromiseApiCall:', error)
     })
@@ -62,5 +48,30 @@ router.get('/' , (req, res) => {
     })
 })
 
+router.delete('/delete/:id', (req, res) => {
+    const idToDel = [req.params.id]
+    console.log('IdToDel:' , [idToDel])
+    const queryText = `DELETE FROM "bookmarks" WHERE id=$1;`
+    pool.query(queryText, idToDel).then(result => {
+        res.sendStatus(201);
+    }).catch(err => {
+        console.log('Error deleting bookmark:', err)
+        res.sendStatus(500)
+    })
+})
+
+router.put('/update/:id', (req , res) => {
+    // const idToUpdate = [req.params.id]
+    // console.log('IdToUpdate:', idToUpdate);
+    const queryText = `UPDATE "bookmarks" SET "comments" = $1 WHERE "id" = $2`
+    console.log('This is server comment:', req.body)
+    console.log('This is req.params.id:', req.params.id)
+    pool.query(queryText , [req.body.comments , req.params.id]).then(result => {
+        res.sendStatus(201)
+    }).catch(err => {
+        console.log('Error in PUT /bookmark.router', err);
+        res.sendStatus(500);
+    })
+})
 
 module.exports = router;
