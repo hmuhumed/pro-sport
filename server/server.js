@@ -15,6 +15,7 @@ const fixtureRouter = require('./routes/fixtures.router');
 const squadRouter = require('./routes/squad.router');
 const playerRouter = require('./routes/player.routes')
 const bookmarkRouter = require('./routes/bookmarks.router')
+const laLigaRouter = require('./routes/laliga.router')
 
 // Body parser middleware
 app.use(bodyParser.json());
@@ -35,6 +36,7 @@ app.use('/api/fixtures', fixtureRouter);
 app.use('/api/players/squads' , squadRouter);
 app.use('/api/players' , playerRouter)
 app.use('/api/bookmarks' , bookmarkRouter)
+app.use('/api/laLiga', laLigaRouter)
 
 
 // Serve static files

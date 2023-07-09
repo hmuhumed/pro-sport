@@ -1,7 +1,7 @@
 import React from 'react';
 import LoginForm from '../LoginForm/LoginForm';
 import { useHistory } from 'react-router-dom';
-import videoBg from '../Assests/videoBg.mp4'
+import videoBg from "../Assests/video (2160p).mp4"
 // import { useEffect, useRef } from 'react';
 import './LoginPage.css'
 

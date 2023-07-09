@@ -44,6 +44,7 @@ function UserPage() {
       <br />
       <h4>Are you ready to get started?</h4>
       <button className="Started" onClick={() => getStartedButton()}>Get Started</button>
+      {/* <button></button> */}
     </div>
   );
 }
