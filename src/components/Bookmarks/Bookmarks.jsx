@@ -4,6 +4,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { useEffect, useState } from "react";
 import './Bookmarks.css'
 import BookmarkItem from "../BookmarkItem/BookmarkItem";
+import {Container , Grid} from "@mui/material"
 // import { callApi } from "../../../server/modules/api.cache";
 
 function Bookmarks() {
@@ -43,11 +44,22 @@ function Bookmarks() {
     <>
 
       <h2 className="bookmarks-header">Bookmarks</h2>
-      <div className="player-card-container">
+      <Container 
+      maxWidth="xl" 
+      // sx={{display: "flex" , flexDirection: "row", justifyContent: "center"}}
       
+      >
+      <Grid container 
+      spacing={1} >
         { bookmarks ? bookmarks?.map((bookmark) => (
-
+            <Grid item
+            xs={12}
+            sm={12}
+            md={4}
+            lg={3}
+            xl={3} >
             <BookmarkItem bookmark={bookmark} />
+            </Grid>
         //   <div key={bookmark.id} className="player-card">
         //     <p><img src={bookmark.player?.photo} alt="" /></p>
         //     <p>Name: {bookmark.player?.name}</p>
@@ -74,8 +86,11 @@ function Bookmarks() {
 
         )) : <p>Loading...</p>}
 
-      </div>
+        </Grid>
+
+      </Container>
       
+      {/* <button onClick={() => history.push(`/squads/${bookmarks.id}`)}>Back</button> */}
     </>
   );
 }

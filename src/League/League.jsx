@@ -4,6 +4,7 @@ import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
 import { useEffect } from "react";
 import "./League.css";
+import {Container} from "@mui/material"
 
 function League() {
   const standings = useSelector((store) => store.leagueReducer);
@@ -27,8 +28,11 @@ function League() {
 
 
   return (
-    <>
-      <h1 className="title">English Premier League</h1>
+    
+    <Container maxWidth="xl">
+      <h1 className="title"><img src={fixtures[0]?.league.logo}/> English Premier League</h1>
+      <br />
+
       <p className="dialogue">
         The English Premier League, often referred to as the EPL, is the top
         professional football league in England. It was established in 1992,
@@ -37,6 +41,8 @@ function League() {
         the second-tier Championship, and the top two teams from the
         Championship are promoted to the Premier League.
       </p>
+      <br />
+
       <p className="dialogue">
         Since its inception, the Premier League has become one of the most
         popular and competitive football leagues in the world, attracting top
@@ -45,14 +51,21 @@ function League() {
         clubs include Arsenal, Chelsea, Manchester City, and Liverpool, all of
         whom have enjoyed considerable success in the league.
       </p>
+      <br />
+
       <p className="dialogue">
         The Premier League's rise to prominence has been fuelled by lucrative TV
         deals, passionate fans, and high-quality football. Its impact on the
         sport's global popularity cannot be understated, making it a powerhouse
         in the world of football.
       </p>
+      <br />
+      <br />
+
       <h2 className="header">Standings</h2>
+     <br />
       <table className="standings">
+        
         <thead>
           <tr>
             <th>Rank</th>
@@ -68,7 +81,7 @@ function League() {
           </tr>
         </thead>
         <tbody>
-          <tr></tr>
+          
           {standings.map((position, i) => (
             <tr key={i} >
               <td>{position.rank}</td>
@@ -87,11 +100,13 @@ function League() {
       <br></br>
       <h2 className="recent-fixtures">Recent Fixtures</h2>
       {fixtures?.map((game, i) => (
-        <p key={i} className="fixtures"> <img src={game.teams.home.logo} className="image" />  {game.teams.home.name} {game.score.fulltime.home} - {game.score.fulltime.away} <img src={game.teams.away.logo} className="image" /> {game.teams.away.name}</p>
+        <h4 key={i} className="fixtures"> <img src={game.teams.home.logo} className="image" />  {game.teams.home.name} {game.score.fulltime.home} - {game.score.fulltime.away} <img src={game.teams.away.logo} className="image" /> {game.teams.away.name}</h4>
       ))}
+      <br />
       
-
-    </>
+    </Container>
+    
+    
   );
 }
 

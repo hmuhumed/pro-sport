@@ -79,4 +79,15 @@ button {
     text-align: center;
     justify-content: center;
   }
+
+  .squadPage{
+    /* background-image: url(https://balance-style.jp/times/wp-content/uploads/2021/08/081502-750x750.jpg); */
+    /* background-color: #04f5ff; */
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+  }
   
+  .back-btn:hover {
+    background-color: magenta;
+  }

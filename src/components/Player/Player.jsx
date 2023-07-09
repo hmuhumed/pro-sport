@@ -12,7 +12,6 @@ function Player(){
     const dispatch = useDispatch();
     const history = useHistory();
     const params = useParams();
-    // const [comment , setComment] = useState('');
 
     useEffect(() => {
         dispatch({
@@ -27,47 +26,98 @@ function Player(){
     }
    
 
-    // const id = players.statistics.find((team) => team.team.id)
-    // const squad = useSelector((store) => store.squadReducer.find((squad) => squad.id == params.id))
+    
     return (
         <>
+        <div className="players-page" style={{fontWeight:'bold'}}>
+        <div className="player-cards">
+            <div className="centered-content">
             {players.map((athlete , i) => (
+                <>
+                <h2>{athlete.statistics[0].team.name}'s {athlete.statistics[0].games.position}</h2>
+                <br />
                 <div className="player-image">
-                <img src={athlete.player.photo}/>
+                <img  className="player-image" src={athlete.player.photo}/>
                 </div>
+                </>
             ))}
 
             
             {players.map((athlete , i) => (
-                <div className="player-bio">
-                <p>Name: {athlete.player.name}</p>
-                <p>Age: {athlete.player.age}</p>
-                <p>Nationality: {athlete.player.nationality}</p>
-                <p>Height: {athlete.player.height}</p>
-                <p>Weight: {athlete.player.weight}</p>
-                </div>
+                    <div className="player-bio">
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td><p>Name: {athlete.player.name}</p></td>
+                            </tr>
+                            <tr>
+                                <td><p>Age: {athlete.player.age}</p></td>
+                            </tr>
+                            <tr>
+                                <td><p>Nationality: {athlete.player.nationality}</p></td>
+                            </tr>
+                            <tr>
+                                <td><p>Height: {athlete.player.height}</p></td>
+                            </tr>
+                            <tr>
+                                <td><p>Weight: {athlete.player.weight}</p></td>
+                            </tr>
+                    <br />
+                        </tbody>
+                    </table>
+                    </div>
+                
             ))}
             <h1 className="stats-header" >Stats</h1>
             {players.map((athlete, i) => (
                 <>
                 <div className="player-stats">
-                    <p>Appearence: {athlete.statistics[0].games.appearences}</p>
-                    <p>Minutes Played: {athlete.statistics[0].games.minutes}</p>
-                    <p>Goals: {athlete.statistics[0].goals.total}</p>
-                    <p>Passes: {athlete.statistics[0].passes.total}</p>
-                    <p>Pass Accuracy: {athlete.statistics[0].passes.accuracy}%</p>
-                    <p>Key Passes: {athlete.statistics[0].passes.key}</p>
-                    <p>Tackles: {athlete.statistics[0].tackles.total}</p>
-                    <p>Blocks: {athlete.statistics[0].tackles.blocks}</p>
-                    <p>Interception: {athlete.statistics[0].tackles.interceptions}</p>
-                    <p>Duels: {athlete.statistics[0].duels.total} | Won {athlete.statistics[0].duels.won} </p>
-                    <p>Dribbles: Attempts {athlete.statistics[0].dribbles.attempts} | Success {athlete.statistics[0].dribbles.success}</p>
-                    <p>Penalties: Scored {athlete.statistics[0].penalty.scored} | Missed {athlete.statistics[0].penalty.missed}</p>
-
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td><p>Appearence: {athlete.statistics[0].games.appearences}</p></td>
+                            </tr>
+                            <tr>
+                                <td><p>Minutes Played: {athlete.statistics[0].games.minutes}</p></td>
+                            </tr>
+                            <tr>
+                                <td><p>Goals: {athlete.statistics[0].goals.total}</p></td>
+                            </tr>
+                            <tr>
+                                <td><p>Passes: {athlete.statistics[0].passes.total}</p></td>
+                            </tr>
+                            <tr>
+                                <td><p>Pass Accuracy: {athlete.statistics[0].passes.accuracy}%</p></td>
+                            </tr>
+                            <tr>
+                                <td><p>Key Passes: {athlete.statistics[0].passes.key}</p></td>
+                            </tr>
+                            <tr>
+                                <td><p>Tackles: {athlete.statistics[0].tackles.total}</p></td>
+                            </tr>
+                            <tr>
+                                <td><p>Blocks: {athlete.statistics[0].tackles.blocks}</p></td>
+                            </tr>
+                            <tr>
+                                <td><p>Interception: {athlete.statistics[0].tackles.interceptions}</p></td>
+                            </tr>
+                            <tr>
+                                <td><p>Duels: {athlete.statistics[0].duels.total} | Won {athlete.statistics[0].duels.won} </p></td>
+                            </tr>
+                            <tr>
+                                <td><p>Dribbles: Attempts {athlete.statistics[0].dribbles.attempts} | Success {athlete.statistics[0].dribbles.success}</p></td>
+                            </tr>
+                            <tr>
+                                <td><p>Penalties: Scored {athlete.statistics[0].penalty.scored} | Missed {athlete.statistics[0].penalty.missed}</p></td>
+                            </tr>
+                    <br />
+                        </tbody>
+                    </table>
                 </div>
+               
                 <button onClick={() => history.push(`/squads/${athlete.statistics[0].team.id}`)}>Back</button>
                 </>
-            ))}
+            ))}</div></div></div>
 
             
         </>

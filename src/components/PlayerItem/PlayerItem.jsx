@@ -1,6 +1,7 @@
 import { useHistory , Link } from "react-router-dom";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
+import './PlayerItem.css'
 
 function PlayerItem({player}){
 
@@ -31,10 +32,10 @@ function PlayerItem({player}){
               <td>
                 <img src={player.player.photo} className="player-img" alt="" />
               </td>
-              <td> <input type="text" value={comment} placeholder="Comment about player.." onChange={(e) => setComment(e.target.value)}/> </td>
+              <td> <input className="comment"type="text" value={comment} placeholder="Comment about player.." onChange={(e) => setComment(e.target.value)}/> </td>
               <td>
                 
-                <button onClick={() => handleBookmark()}>
+                <button className="bookmark-btn"  onClick={() => handleBookmark()}>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"

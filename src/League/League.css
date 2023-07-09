@@ -6,11 +6,18 @@
 .dialogue{
     text-align: center;
     justify-content: center;
+    font-weight: bold;
+    color: black;
 }
 
 .standings{
-    margin-left: auto;
-    margin-right: auto;
+    margin-left: 10%;
+    
+    width: 80%;  
+    opacity: 90%;
+    /* color: white; */
+    
+
 }
 
 .recent-fixtures{
@@ -28,6 +35,11 @@
     width: 20px;
 }
 
+img{
+    height: 30px;
+    width: 30px;
+}
+
 .header{
     text-align: center;
     justify-content: center;
@@ -43,4 +55,21 @@
     display: flex;
     align-items: center;
     margin-bottom: 10px;
+  }
+
+  .league-view{
+    /* background-image: url(https://pbs.twimg.com/media/EkTNMwxX0AEZkRT.jpg); */
+    /* padding: 0; */
+    /* height: auto; */
+    /* background-color: #143d9e; */
+    margin: absolute;
+    margin-bottom: -27px;
+      /* Full height */
+    height: 140%;
+
+  /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
   }

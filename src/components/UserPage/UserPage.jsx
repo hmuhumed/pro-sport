@@ -15,10 +15,11 @@ function UserPage() {
   }
 
   return (
+    
     <div className="container">
       <h2>Welcome, {user.username}!</h2>
-      <p>Your ID is: {user.id}</p>
-      <LogOutButton className="btn" />
+     
+      
 
       <h1 className="intro">Introduction To Soccer</h1>
       <p>
@@ -29,6 +30,7 @@ function UserPage() {
         millions worldwide.
       </p>
       <br />
+      <div className="embeded-vid">
       <iframe
         className="video"
         width="560"
@@ -38,7 +40,7 @@ function UserPage() {
         frameBorder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
         allowFullScreen
-      ></iframe>
+      ></iframe></div>
       <br />
       <h4>Are you ready to get started?</h4>
       <button className="Started" onClick={() => getStartedButton()}>Get Started</button>

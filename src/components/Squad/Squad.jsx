@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import "./Squad.css";
 // import squadReducer from "../../redux/reducers/squad.reducer";
 import PlayerItem from "../PlayerItem/PlayerItem";
+import {Container} from "@mui/material"
 
 function Squad() {
   const squad = useSelector((store) => store.squadReducer);
@@ -29,7 +30,11 @@ function Squad() {
 
   return (
     <>
-      <h2>{squad[0]?.statistics[0]?.team.name}</h2>
+    <Container maxWidth="xl">
+    <br />
+      <h1 className="team-name"><img src={squad[0]?.statistics[0]?.team.logo} alt="" />{squad[0]?.statistics[0]?.team.name}</h1>
+      <br />
+      <br />
       <table>
         <thead>
           <tr>
@@ -79,7 +84,8 @@ function Squad() {
         </tbody>
       </table>
       <br />
-      <button onClick={() => history.push('/league')}>Back</button>
+      <button className="back-btn"onClick={() => history.push('/league')}>Back</button>
+      </Container>
     </>
   );
 }

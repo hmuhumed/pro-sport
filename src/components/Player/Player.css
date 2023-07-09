@@ -3,21 +3,60 @@
     justify-content: center;
 }
 
+.player-page{
+    display: flex;
+    justify-content: center;
+}
+
+
+
 .player-stats{
     text-align: center;
     justify-content: center;
 }
 
 .player-image{
-    /* justify-content: center;
-    align-items: center; */
+    justify-content: center;
+    align-items: center;
     display: block;
   margin-left: auto;
-  margin-right: auto;
-  width: 10%;
+  margin-right: 25px;
+
+  width: 80%;
+  height: 60%;
+  flex: 0, 0, 300px;
+  
 }
 
 .stats-header{
     text-align: center;
     justify-content: center;
+}
+
+.player-cards{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    justify-content: center;
+    text-align: center;
+    align-content: center;
+    margin-left:  40%;
+    padding: 0px;
+    width: 400px;
+    /* background-color:lightseagreen; */
+    /* background-image: url(https://w0.peakpx.com/wallpaper/881/867/HD-wallpaper-premier-league-golden-logo-artwork-football-leagues-brown-metal-background-creative-premier-league-logo-brands-premier-league.jpg); */
+    color: black;
+    border-radius: 20%;
+    
+    opacity: 100%;
+
+}
+
+.centered-content{
+    text-align: center;
+}
+
+.players-page{
+    /* background-image: url(https://m.media-amazon.com/images/I/71iMjl9QcgL.jpg); */
 }

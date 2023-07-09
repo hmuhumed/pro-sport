@@ -10,6 +10,7 @@
     padding: 20px;
     width: 300px;
     text-align: center;
+    /* height: 150px; */
   }
   
   /* .player-card img {
@@ -40,5 +41,10 @@
  .bookmarks-header{
     text-align: center;
     justify-content: center;
+ }
+
+ .playerTeamLogo{
+    width: 20%;
+    height: 20%;
  }
   

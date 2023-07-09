@@ -3,9 +3,22 @@
     justify-content: center;
 }
 
-.video{
+.embeded-vid{
     justify-content: center;
     text-align: center;
     align-content: center;
+    margin-left:  25%;
+    padding: 0px;
+    width: 400px;
 }
+
+/* .container{
+    background-image: url(https://1.bp.blogspot.com/-BszvIlb9Aks/YIkWOzYLovI/AAAAAAAC-_8/W-P09MjmbYE0-qXqtTI2fzwNJDDygxJEQCNcBGAsYHQ/s600/premier-league-hall-of-fame-kit%2B%25284%2529.jpg);
+    background-size: cover;
+
+} */
+
+/* iframe{
+    
+} */
 
