@@ -4,7 +4,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { useEffect, useState } from "react";
 import './Bookmarks.css'
 import BookmarkItem from "../BookmarkItem/BookmarkItem";
-import {Container , Grid} from "@mui/material"
+import {Container , Grid, Typography} from "@mui/material"
 // import { callApi } from "../../../server/modules/api.cache";
 
 function Bookmarks() {
@@ -42,8 +42,9 @@ function Bookmarks() {
 
   return (
     <>
-
-      <h2 className="bookmarks-header">Bookmarks</h2>
+    <br />
+      <div className="bookmark-page">
+      <Typography variant="h2" className="bookmarks-header">Bookmarks</Typography>
       <Container 
       maxWidth="xl" 
       // sx={{display: "flex" , flexDirection: "row", justifyContent: "center"}}
@@ -91,6 +92,7 @@ function Bookmarks() {
       </Container>
       
       {/* <button onClick={() => history.push(`/squads/${bookmarks.id}`)}>Back</button> */}
+      </div>
     </>
   );
 }

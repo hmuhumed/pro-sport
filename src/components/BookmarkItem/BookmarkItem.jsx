@@ -72,6 +72,7 @@ function BookmarkItem({bookmark}){
             <TextField  name={bookmark.player.name} placeholder={bookmark.comments} value={comment} onChange={(e) => setComment(e.target.value)}
             />
             <Button onClick={handleUpdate}>Submit</Button>
+            <Button nt="contained" sx={{mx:2 , my:3}} onClick={() => setClick(!click)}>Cancel</Button>
             </CardContent>
             
             }
