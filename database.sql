@@ -17,3 +17,11 @@ CREATE TABLE "cache" (
     "response" TEXT,
     "created_at" TIMESTAMP DEFAULT NOW()
 );
+
+CREATE TABLE "bookmarks" (
+"id" SERIAL PRIMARY KEY,
+"player_id" INTEGER,
+"comments" VARCHAR(1000),
+"user_id" INT REFERENCES "user"
+);
+
