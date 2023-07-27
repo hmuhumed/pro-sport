@@ -9,6 +9,9 @@ import playerSaga from './player.saga';
 import bookmarkSaga from './bookmark.saga';
 import deleteSaga from './delete.saga';
 import updateSaga from './update.saga';
+import laLigaSaga from './laLiga.saga';
+import ligaFixtureSaga from './ligaFixture.saga';
+import ligue1Saga from './ligue1.saga';
 
 // rootSaga is the primary saga.
 // It bundles up all of the other sagas so our project can use them.
@@ -28,6 +31,9 @@ export default function* rootSaga() {
     playerSaga(),
     bookmarkSaga(),
     deleteSaga(),
-    updateSaga()
+    updateSaga(),
+    laLigaSaga(),
+    ligaFixtureSaga(),
+    ligue1Saga(),
   ]);
 }

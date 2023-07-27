@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 import "./Squad.css";
 // import squadReducer from "../../redux/reducers/squad.reducer";
 import PlayerItem from "../PlayerItem/PlayerItem";
-import {Container} from "@mui/material"
+import {Container, Button} from "@mui/material"
 
 function Squad() {
   const squad = useSelector((store) => store.squadReducer);
@@ -84,7 +84,9 @@ function Squad() {
         </tbody>
       </table>
       <br />
-      <button className="back-btn"onClick={() => history.push('/league')}>Back</button>
+      <Button className="back-btn"onClick={() => history.push('/league')} sx={{color: "blue"}}>Back</Button>
+      <br />
+      <br />
       </Container>
     </>
   );

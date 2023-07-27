@@ -25,6 +25,8 @@ import League from '../../League/League';
 import Squad from '../Squad/Squad';
 import Player from '../Player/Player';
 import Bookmarks from '../Bookmarks/Bookmarks';
+import LaLiga from '../LaLiga/LaLiga';
+import Ligue1 from '../Ligue1/Ligue1';
 
 function App() {
   const dispatch = useDispatch();
@@ -78,6 +80,21 @@ function App() {
           path="/league"
           >
             <League />
+          </ProtectedRoute>
+
+          <ProtectedRoute 
+          exact 
+          path="/laLiga"
+          >
+            <LaLiga />
+          </ProtectedRoute>
+
+          <ProtectedRoute
+          exact
+          path="/ligue1"
+          >
+
+            <Ligue1 />
           </ProtectedRoute>
 
           <ProtectedRoute

@@ -1,0 +1,19 @@
+.standings{
+    margin-left: 10%;
+    
+    width: 80%;  
+    opacity: 90%;
+    /* color: white; */
+    
+
+}
+
+.title{
+    text-align: center;
+    justify-content: center;
+}
+
+.header{
+    text-align: center;
+    justify-content: center;
+}

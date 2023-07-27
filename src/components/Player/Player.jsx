@@ -119,7 +119,7 @@ function Player(){
                     </table>
                 </div>
                
-                <button onClick={() => history.push(`/squads/${athlete.statistics[0].team.id}`)}>Back</button>
+                <Button onClick={() => history.push(`/squads/${athlete.statistics[0].team.id}`)}>Back</Button>
                 <br />
                 </>
             ))}</div></CardContent></Card> 

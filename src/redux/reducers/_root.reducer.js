@@ -6,6 +6,9 @@ import fixturesReducer from './fixtures.reducer';
 import squadReducer from './squad.reducer';
 import playerReducer from './player.reducer';
 import bookmarkReducer from './bookmark.reducer';
+import laLigaReducer from './laLiga.reducer';
+import ligaFixturesReducer from './ligaFxiture.reducer';
+import ligue1Reducer from './ligue1.reducer';
 
 // rootReducer is the primary reducer for our entire project
 // It bundles up all of the other reducers so our project can use them.
@@ -20,7 +23,11 @@ const rootReducer = combineReducers({
   fixturesReducer,
   squadReducer,
   playerReducer,
-  bookmarkReducer
+  bookmarkReducer,
+  laLigaReducer,
+  ligaFixturesReducer,
+  ligue1Reducer
+
 });
 
 export default rootReducer;
